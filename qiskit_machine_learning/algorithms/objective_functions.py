@@ -159,7 +159,7 @@ class MultiClassObjectiveFunction(ObjectiveFunction):
             # vector.
             # loss vector is a loss of a particular output value(value of i) versus true labels.
             # we do this across all samples.
-            val += probs[:, i] @ self._loss(np.full(num_samples, i), self._y[:, i])
+            val += probs[:, i] @ self._loss(np.full(num_samples, :), self._y[:, i])
         val = val / self._num_samples
 
         return val
